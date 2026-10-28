@@ -8,8 +8,8 @@ class Nawa < Formula
     depends_on macos: :sequoia
 
     on_arm do
-      url "https://github.com/bunasys/nawa/releases/download/v0.5.2/nawa-0.5.2-macos-arm64.tar.gz"
-      sha256 "8accc87fd8dd343e4f34c4b6140b66cffeccbcbe06891932705d84de7ada8f1e"
+      url "https://github.com/bunasys/nawa/releases/download/v0.6.0/nawa-0.6.0-macos-arm64.tar.gz"
+      sha256 "307a5089c4d1a966f6a8430dc7c49f8b87ceeb29663dbf4abe8094d4a912d465"
     end
   end
 
@@ -17,8 +17,8 @@ class Nawa < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://github.com/bunasys/nawa/releases/download/v0.5.2/nawa-0.5.2-linux-amd64.tar.gz"
-      sha256 "d1a19170b66d2c85028ea41a9ab6f0939833830d527d86a190d1bda158755e53"
+      url "https://github.com/bunasys/nawa/releases/download/v0.6.0/nawa-0.6.0-linux-amd64.tar.gz"
+      sha256 "3bcc7794f51e76fbf02bf4f6c24f166668f1a77c089a3183c4294f5426d753b4"
     end
   end
 
