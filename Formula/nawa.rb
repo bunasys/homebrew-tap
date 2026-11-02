@@ -3,8 +3,6 @@ class Nawa < Formula
   homepage "https://github.com/bunasys/nawa"
   license "MIT"
 
-  GLIBC_FLOOR = "2.35"
-
   on_macos do
     depends_on arch: :arm64
     depends_on macos: :sequoia
@@ -19,22 +17,13 @@ class Nawa < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://github.com/bunasys/nawa/releases/download/v0.7.3/nawa-0.7.3-linux-amd64-glibc.tar.gz"
-      sha256 "3df4e87b7e1e36ad5362e68c4d3c608fc62f1271c50b04e44a43a971b0a238b7"
-
-      resource "static" do
-        url "https://github.com/bunasys/nawa/releases/download/v0.7.3/nawa-0.7.3-linux-amd64.tar.gz"
-        sha256 "d45d60f8377b270f53cdaea4fa9e4503000b70ee01eecee13976370b14de74eb"
-      end
+      url "https://github.com/bunasys/nawa/releases/download/v0.7.3/nawa-0.7.3-linux-amd64.tar.gz"
+      sha256 "d45d60f8377b270f53cdaea4fa9e4503000b70ee01eecee13976370b14de74eb"
     end
   end
 
   def install
-    if OS.mac? || OS::Linux::Glibc.version >= Version.new(GLIBC_FLOOR)
-      bin.install "nawa"
-    else
-      resource("static").stage { bin.install "nawa" }
-    end
+    bin.install "nawa"
   end
 
   test do
